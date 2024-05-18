@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <audio autoplay="autopaly">
+    <audio id="lovemp3" autoplay="autopaly" >
       <source src="love.mp3" type="audio/mp3" />
     </audio>
     <div id="main">
@@ -196,6 +196,14 @@ cursor: pointer;
 
         canvas
           .click(function (e) {
+            console.log("load")
+        const lovevideo = document.querySelector("#lovemp3")
+        setTimeout(()=>{
+          lovevideo.muted = false
+          lovevideo.autoplay = true
+          lovevideo.play()
+        }, 1000)
+
             var offset = canvas.offset(),
               x,
               y;
